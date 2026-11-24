@@ -1,0 +1,95 @@
+/* NK-SYSTEMS — noir #0d0d0d + or #d4af37 */
+:root {
+  --noir: #0d0d0d;
+  --anthracite: #1a1a1a;
+  --carte: #232323;
+  --or: #d4af37;
+  --vert: #2ecc71;
+  --bleu: #2563eb;
+  --texte: #f2ede4;
+  --texte-muet: #9a948a;
+  --bord: #333;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--noir);
+  color: var(--texte);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 880px; margin: 0 auto; padding: 24px 18px 96px; }
+header.top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 18px 0;
+}
+.logo { color: var(--or); font-weight: 700; letter-spacing: 2px; font-size: 1.05rem; }
+.logo span { color: var(--texte); }
+h1 { font-size: 1.9rem; line-height: 1.25; margin-bottom: 12px; }
+h2 { font-size: 1.35rem; margin-bottom: 10px; }
+p.lead { color: var(--texte-muet); font-size: 1.05rem; }
+.badge {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  background: rgba(46,204,113,.15); color: var(--vert);
+  border: 1px solid rgba(46,204,113,.4); font-size: .85rem; font-weight: 600;
+}
+.badge.orange { background: rgba(255,158,54,.12); color: #ff9e36; border-color: rgba(255,158,54,.4); }
+.card {
+  background: var(--carte); border: 1px solid var(--bord); border-radius: 16px;
+  padding: 26px; margin-top: 22px;
+}
+.carte-anthracite { background: var(--anthracite); }
+.checks { list-style: none; margin: 18px 0; }
+.checks li { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; font-size: 1rem; }
+.checks .tick { color: var(--vert); font-weight: 700; }
+.btn {
+  display: inline-block; width: 100%; min-height: 48px; padding: 14px 22px;
+  border: none; border-radius: 12px; font-size: 1.05rem; font-weight: 700;
+  cursor: pointer; text-align: center; transition: filter .15s;
+}
+.btn:hover { filter: brightness(1.12); }
+.btn-bleu { background: linear-gradient(90deg,#f0d98c,#d4af37); color: #14100a; box-shadow: 0 4px 18px rgba(212,175,55,.25); }
+.btn-or { background: var(--or); color: var(--noir); }
+.btn-ghost { background: transparent; color: var(--texte-muet); border: 1px solid var(--bord); }
+.btn:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+.link-quiet { display: block; text-align: center; margin-top: 14px; color: var(--texte-muet); font-size: .92rem; }
+.link-quiet:hover { color: var(--texte); }
+input[type="email"] {
+  width: 100%; padding: 13px 16px; margin: 8px 0 14px; border-radius: 10px;
+  border: 1px solid var(--bord); background: var(--noir); color: var(--texte); font-size: 1rem;
+}
+input[type="email"]:focus { outline: 2px solid var(--or); }
+input[type="tel"] {
+  width: 100%; padding: 13px 16px; margin: 8px 0 14px; border-radius: 10px;
+  border: 1px solid var(--bord); background: var(--noir); color: var(--texte); font-size: 1rem;
+}
+input[type="tel"]:focus { outline: 2px solid var(--or); }
+.privacy { font-size: .8rem; color: var(--texte-muet); margin-top: 12px; }
+.privacy a { color: var(--or); }
+/* Quiz */
+.progressbar { height: 6px; background: var(--bord); border-radius: 3px; overflow: hidden; margin: 16px 0 6px; }
+.progressbar > div { height: 100%; background: var(--or); width: 0; transition: width .3s; }
+.step-count { color: var(--texte-muet); font-size: .85rem; }
+.choices { display: grid; gap: 12px; margin-top: 20px; }
+.choice {
+  display: block; width: 100%; text-align: left; padding: 16px 18px;
+  background: var(--carte); border: 1px solid var(--bord); border-radius: 12px;
+  color: var(--texte); font-size: 1rem; cursor: pointer;
+}
+.choice:hover { border-color: var(--or); }
+.choice:focus-visible { outline: 2px solid var(--or); }
+.choice.selected { border-color: var(--or); background: #2b2410; }
+/* Diagnostic */
+.steps-nav { display: flex; gap: 6px; margin: 18px 0; }
+.steps-nav .dot { height: 5px; flex: 1; background: var(--bord); border-radius: 3px; }
+.steps-nav .dot.active { background: var(--or); }
+.fact, .prio, .opp { border-left: 3px solid var(--or); padding: 10px 14px; margin: 12px 0; background: var(--carte); border-radius: 0 10px 10px 0; }
+.muted { color: var(--texte-muet); font-size: .9rem; }
+.small { font-size: .85rem; color: var(--texte-muet); }
+.error { color: #ff6b6b; font-size: .9rem; margin-top: 8px; }
+[aria-live] { min-height: 1.2em; }
+.hidden { display: none !important; }
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  .card { padding: 18px; }
+}
